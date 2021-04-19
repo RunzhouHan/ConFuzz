@@ -41,7 +41,6 @@ mke2fs_command = {
 		"must_have": True, # set true for -i
 		"dependency_id": None,
 		# "weight": 0;
-		"child": None
 		},
 	"-c": {
 		"id": 2,
@@ -52,8 +51,7 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,
-		"child": {
-			"c":{
+		"c":{
 			"id": 3,
 			# "arg": "c",
 			"value": None,
@@ -62,9 +60,7 @@ mke2fs_command = {
 			"mutex": None,
 			"must_have": False,
 			"dependency_id": [2],
-			"child": None
 			}
-		}
 		},
 	"-E": {
 		"id": 4,
@@ -75,90 +71,81 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": True,
 		"dependencies_id": None,
-		"child": {
-			"stride=": {  # RAID arg, need to test with '='' & '= ' 
-				"id": 5,
-				# "arg": "stride=", 
-				"value": {"greater": 0}, # -1 is the flag means greater than
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,  
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None,
-				},
-			"stride-width=": {  # RAID arg
-				"id": 6,
-				# "arg": "stride-width=", 
-				"value": {"greater": 0}, # This is typically stride-size * N
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,  
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				},
-			"resize=": {  
-				"id": 7,
-				# "arg": "resize=", 
-				"value": {"greater": fs_size}, # -2 is the flag means greater than. must greater than FS size
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None, 
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				},
-			"lazy_itable_init=": {  
-				"id": 8,
-				# "arg": "lazy_itable_init=", 
-				"value": {"select": [0, 1]},
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,  
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				},
-			"test_fs": {  
-				"id": 9,
-				# "arg": "test_fs", 
-				"value": None,
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None, 
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				},
-			"discard": {  
-				"id": 10,
-				# "arg": "discard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
-				"value": None,
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None, 
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				},
-			"nodiscard": {  
-				"id": 11,
-				# "arg": "nodiscard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
-				"value": None,
-				"child": None,
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None, 
-				"must_have": False,
-				"dependency_id": [4], 
-				"child": None
-				}
+		"stride=": {  # RAID arg, need to test with '='' & '= ' 
+			"id": 5,
+			# "arg": "stride=", 
+			"value": {"greater": 0}, # -1 is the flag means greater than
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,  
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"stride-width=": {  # RAID arg
+			"id": 6,
+			# "arg": "stride-width=", 
+			"value": {"greater": 0}, # This is typically stride-size * N
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,  
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"resize=": {  
+			"id": 7,
+			# "arg": "resize=", 
+			"value": {"greater": fs_size}, # -2 is the flag means greater than. must greater than FS size
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None, 
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"lazy_itable_init=": {  
+			"id": 8,
+			# "arg": "lazy_itable_init=", 
+			"value": {"select": [0, 1]},
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,  
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"test_fs": {  
+			"id": 9,
+			# "arg": "test_fs", 
+			"value": None,
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None, 
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"discard": {  
+			"id": 10,
+			# "arg": "discard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
+			"value": None,
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None, 
+			"must_have": False,
+			"dependency_id": [4], 
+			},
+		"nodiscard": {  
+			"id": 11,
+			# "arg": "nodiscard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
+			"value": None,
+			"child": None,
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None, 
+			"must_have": False,
+			"dependency_id": [4], 
 			}
 		},
 		# {
@@ -182,7 +169,6 @@ mke2fs_command = {
 		"must_have": True,
 		# set as true currently to avoid popping questions
 		"dependency_id": None,
-		"child": None
 		},
 	"-g": {
 		"id": 13,
@@ -198,7 +184,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,
-		"child": None
 		},
 	"-G": {
 		"id": 14,
@@ -209,7 +194,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": [33], # to be replaced with real id
-		"child": None
 		},		
 	"-i": {
 		"id": 15,
@@ -220,7 +204,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},	
 	"-I": {
 		"id": 16,
@@ -231,7 +214,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 		# Global rule here: For 15 & 16, inode_size * inode_count shouldn't exceed blocksize * total_blocks
 	"-j": {
@@ -245,7 +227,6 @@ mke2fs_command = {
 		"dependency_id": None,  
 		# May need to be modified later May have to have ext3/4 enabled. In other words, doesn't work with a ext2 file system, 
 		# tested with '-t ext2 -j', it will create a ext3 instead, so no dependency/mutex need to be specified here
-		"child": None
 		},
 	"-J": {
 		"id": 18,
@@ -256,35 +237,32 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": {
-			"size=": {  
-				"id": 19,
-				# "arg": "size=", 
-				"value": {"between": [1024*blocksize/1048576, 102400*blocksize/1048576]}, 
-				# Global Rule: The size of the journal must be at least 1024 filesystem blocks (i.e., 1MB if using 1k blocks, 4MB if using 4k blocks, etc.) and may be no more than 102,400 filesystem blocks.
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": [30],  
-				"must_have": False,
-				"dependency_id": [18], 
-				"child": None,
-				},
-			"device=": {  
-				"id": 20,
-				# "arg": "device=", 
-				"value": {"string": journal_dev}, 
-				# Global rule: The external journal must already have been created using the command
-				# mke2fs -O journal_dev external-journal
-				# where external-journal must have been created with the same block size as the new filesystem
-				# Need more design here ...
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": [29],  
-				"must_have": False,
-				"dependency_id": [18],  # Need more dependencies related to 'mke2fs -O journal_dev external-journal'
-				"child": None,
-				}
+		"size=": {  
+			"id": 19,
+			# "arg": "size=", 
+			"value": {"between": [1024*blocksize/1048576, 102400*blocksize/1048576]}, 
+			# Global Rule: The size of the journal must be at least 1024 filesystem blocks (i.e., 1MB if using 1k blocks, 4MB if using 4k blocks, etc.) and may be no more than 102,400 filesystem blocks.
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": [30],  
+			"must_have": False,
+			"dependency_id": [18], 
+			},
+		"device=": {  
+			"id": 20,
+			# "arg": "device=", 
+			"value": {"string": journal_dev}, 
+			# Global rule: The external journal must already have been created using the command
+			# mke2fs -O journal_dev external-journal
+			# where external-journal must have been created with the same block size as the new filesystem
+			# Need more design here ...
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": [29],  
+			"must_have": False,
+			"dependency_id": [18],  # Need more dependencies related to 'mke2fs -O journal_dev external-journal'
 			}
+			
 		},	
 	"-K": {
 		"id": 21,
@@ -297,7 +275,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},	
 	"-l": {
 		"id": 22,
@@ -310,7 +287,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},		
 	"-L": {
 		"id": 23,
@@ -322,7 +298,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},	
 	"-m": {
 		"id": 24,
@@ -333,7 +308,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},	
 	"-M": {
 		"id": 25,
@@ -344,7 +318,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-n": {
 		"id": 26,
@@ -355,7 +328,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-N": {
 		"id": 27,
@@ -368,7 +340,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-o": {
 		"id": 28,
@@ -380,7 +351,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-O": {
 		"id": 29,
@@ -391,122 +361,110 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": {
-			"dir_index": {
-				"id": 30,
-				# "arg": "dir_index",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"extent": {
-				"id": 31,
-				# "arg": "extent",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"filetype": {
-				"id": 32,
-				# "arg": "filetype",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"flex_bg": {
-				"id": 33,
-				# "arg": "flex_bg",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"has_journal": {
-				"id": 34,
-				# "arg": "has_journal",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"journal_dev": {
-				"id": 35,
-				# "arg": "journal_dev",
-				# Create an external ext3 journal on the given device instead of a regular ext2 filesystem. 
-				# Note that external-journal must be created with the same block size as the filesystems that will be using it.
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"large_file": {
-				"id": 36,
-				# "arg": "large_file",
-				# Modern kernels set this feature automatically when a file > 2GB is created.
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				},
-			"resize_inode": {
-				"id": 37,
-				# "arg": "resize_inode",
-				# related to -E resize
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
+		"dir_index": {
+			"id": 30,
+			# "arg": "dir_index",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
 			},
-			"sparse_super": {
-				"id": 38,
-				# "arg": "sparse_super",
-				# save space for large fs
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
+		"extent": {
+			"id": 31,
+			# "arg": "extent",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
 			},
-			"uninit_bg": {
-				"id": 39,
-				# "arg": "uninit_bg",
-				"value": None, 
-				"operator_sibling": ",",
-				"operator_child": None,
-				"mutex": None,
-				"must_have": False,
-				"dependency_id": [29],  
-				"child": None
-				}
+		"filetype": {
+			"id": 32,
+			# "arg": "filetype",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+			},
+		"flex_bg": {
+			"id": 33,
+			# "arg": "flex_bg",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+			},
+		"has_journal": {
+			"id": 34,
+			# "arg": "has_journal",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+			},
+		"journal_dev": {
+			"id": 35,
+			# "arg": "journal_dev",
+			# Create an external ext3 journal on the given device instead of a regular ext2 filesystem. 
+			# Note that external-journal must be created with the same block size as the filesystems that will be using it.
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+			},
+		"large_file": {
+			"id": 36,
+			# "arg": "large_file",
+			# Modern kernels set this feature automatically when a file > 2GB is created.
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+			},
+		"resize_inode": {
+			"id": 37,
+			# "arg": "resize_inode",
+			# related to -E resize
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+		},
+		"sparse_super": {
+			"id": 38,
+			# "arg": "sparse_super",
+			# save space for large fs
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
+		},
+		"uninit_bg": {
+			"id": 39,
+			# "arg": "uninit_bg",
+			"value": None, 
+			"operator_sibling": ",",
+			"operator_child": None,
+			"mutex": None,
+			"must_have": False,
+			"dependency_id": [29],  
 			}
 		},
 	"-q": {
@@ -518,7 +476,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-r": {
 		"id": 41,
@@ -530,7 +487,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-S": {
 		"id": 42,
@@ -542,7 +498,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-t": {
 		"id": 43,
@@ -553,7 +508,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": True,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-T": {
 		"id": 44,
@@ -564,7 +518,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-U": {
 		"id": 45,
@@ -575,7 +528,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-v": {
 		"id": 46,
@@ -586,7 +538,6 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None
 		},
 	"-V": {
 		"id": 47,
@@ -597,9 +548,8 @@ mke2fs_command = {
 		"mutex": None,
 		"must_have": False,
 		"dependency_id": None,  
-		"child": None,
 		"weight": 0
-		},
+		}
 }
 
 with open('mke2fs.json', 'w') as f:

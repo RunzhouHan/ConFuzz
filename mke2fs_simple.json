@@ -1,0 +1,79 @@
+{
+    "-q": {
+        "id": 40,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null
+    },
+    "-S": {
+        "id": 42,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null
+    },
+    "-v": {
+        "id": 46,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null
+    },
+    "-V": {
+        "id": 47,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null,
+        "weight": 0
+    },
+ "-b": {
+        "id": 40,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null
+    },
+ "-b": {
+        "id": 40,
+        "value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "child": null
+    },
+ "-b": {
+        "id": 1,
+        "value": {
+            "select": [
+                1024,
+                2048,
+                4096
+            ]
+        },
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": true,
+        "dependency_id": null,
+        "child": null
+    }
+}
