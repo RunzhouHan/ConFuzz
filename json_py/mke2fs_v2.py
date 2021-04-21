@@ -16,6 +16,7 @@ import json
 fs_size = 50000
 flex_bg_id = 100
 blocksize = 1024
+MAX = 1000000
 journal_dev = ''
 image = ''
 mount_dir = ''
@@ -30,11 +31,15 @@ Currently have found value of '-E resize' (id:7) conflicts with value of '-g' (i
 
 # Global rule: remove the last sibling operator of each arg branch
 
+value_type = {"descrete_int": 0, "concrete_int": 1, "string": 2, "string_array": 3}
+
+
 mke2fs_command = {
 	"-b": {
 		"id": 1,
 		# "arg": "-b",
-		"value": {"select": [1024, 2048, 4096]}, # -10 is the flag means select one from the following
+		"value": [1024, 2048, 4096], # -10 is the flag means select one from the following
+		"value_type": 0,
 		"operator_sibling": " ",
 		"operator_child": None,
 		"mutex": None,
@@ -47,6 +52,7 @@ mke2fs_command = {
 		"id": 2,
 		# "arg": "-c",
 		"value": None,
+		"value_type": None,
 		"operator_sibling": " ",
 		"operator_child": None,
 		"mutex": None,
@@ -57,6 +63,7 @@ mke2fs_command = {
 			"id": 3,
 			# "arg": "c",
 			"value": None,
+			"value_type": None,
 			"operator_sibling": None,
 			"operator_child": None,
 			"mutex": None,
@@ -70,6 +77,7 @@ mke2fs_command = {
 		"id": 4,
 		# "arg": "-E",
 		"value": None,
+		"value_type": None,
 		"operator_sibling": " ",
 		"operator_child": " ",
 		"mutex": None,
@@ -79,7 +87,8 @@ mke2fs_command = {
 			"stride=": {  # RAID arg, need to test with '='' & '= ' 
 				"id": 5,
 				# "arg": "stride=", 
-				"value": {"greater": 0}, # -1 is the flag means greater than
+				"value": [0, MAX], 
+				"value_type": 1,
 				"operator_sibling": ",",
 				"operator_child": None,
 				"mutex": None,  
@@ -90,7 +99,8 @@ mke2fs_command = {
 			"stride-width=": {  # RAID arg
 				"id": 6,
 				# "arg": "stride-width=", 
-				"value": {"greater": 0}, # This is typically stride-size * N
+				"value": [0, MAX], # This is typically stride-size * N
+				"value_type": 1,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -102,7 +112,8 @@ mke2fs_command = {
 			"resize=": {  
 				"id": 7,
 				# "arg": "resize=", 
-				"value": {"greater": fs_size}, # -2 is the flag means greater than. must greater than FS size
+				"value": [0, MAX], 
+				"value_type": 1,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -114,7 +125,8 @@ mke2fs_command = {
 			"lazy_itable_init=": {  
 				"id": 8,
 				# "arg": "lazy_itable_init=", 
-				"value": {"select": [0, 1]},
+				"value": [0, 1],
+				"value_type": 0,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -127,6 +139,7 @@ mke2fs_command = {
 				"id": 9,
 				# "arg": "test_fs", 
 				"value": None,
+				"value_type": None,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -139,6 +152,7 @@ mke2fs_command = {
 				"id": 10,
 				# "arg": "discard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
 				"value": None,
+				"value_type": None,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -151,6 +165,7 @@ mke2fs_command = {
 				"id": 11,
 				# "arg": "nodiscard",  # SSD-related argument, discarding blocks initially is useful on solid state devices and sparse / thin-provisioned storage
 				"value": None,
+				"value_type": None,
 				"child": None,
 				"operator_sibling": ",",
 				"operator_child": None,
@@ -176,6 +191,7 @@ mke2fs_command = {
 		"id": 12,
 		# "arg": "-F",
 		"value": None,
+		"value_type": None,
 		"operator_sibling": " ",
 		"operator_child": None,
 		"mutex": None,
@@ -184,6 +200,13 @@ mke2fs_command = {
 		"dependency_id": None,
 		"child": None
 		},
+
+########################################
+##############checkpoint################
+########################################
+# checkpoint for modification on value type
+
+
 	"-g": {
 		"id": 13,
 		# "arg": "-g",
