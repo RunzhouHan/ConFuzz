@@ -1,6 +1,6 @@
 {
-    "-b": {
-        "id": 1,
+    "-b ": {
+        "id": 0,
         "value_type": 2,
         "value": [
             2,
@@ -8,48 +8,90 @@
             2,
             1024
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": true,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
-    "-c": {
-        "id": 2,
+    "-c ": {
+        "id": 1,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
         "weight": null,
+        "must_child": false,
+        "child_id": [
+            2
+        ],
         "c": {
-            "id": 3,
+            "id": 2,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": null,
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                2
+                1
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         }
     },
-    "-E": {
-        "id": 4,
+    "-E ": {
+        "id": 3,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": " ",
         "mutex": null,
         "must_have": true,
         "dependencies_id": null,
         "weight": null,
+        "must_child": true,
+        "child_id": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
         "stride=": {
+            "id": 4,
+            "value_type": 1,
+            "value": [
+                0,
+                1000000,
+                1
+            ],
+            "operator_value": null,
+            "operator_sibling": ",",
+            "operator_child": null,
+            "mutex": null,
+            "must_have": false,
+            "dependency_id": [
+                3
+            ],
+            "weight": null,
+            "must_child": false,
+            "child_id": null
+        },
+        "stripe-width=": {
             "id": 5,
             "value_type": 1,
             "value": [
@@ -57,16 +99,19 @@
                 1000000,
                 1
             ],
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                4
+                3
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "stride-width=": {
+        "resize=": {
             "id": 6,
             "value_type": 1,
             "value": [
@@ -74,564 +119,687 @@
                 1000000,
                 1
             ],
-            "child": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                4
+                3
             ],
-            "weight": null
-        },
-        "resize=": {
-            "id": 7,
-            "value_type": 1,
-            "value": [
-                0,
-                1000000,
-                1
-            ],
-            "child": null,
-            "operator_sibling": ",",
-            "operator_child": null,
-            "mutex": null,
-            "must_have": false,
-            "dependency_id": [
-                4
-            ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
         "lazy_itable_init=": {
-            "id": 8,
+            "id": 7,
             "value_type": 1,
             "value": [
                 0,
                 1,
                 1
             ],
-            "child": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                4
+                3
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
         "test_fs": {
+            "id": 8,
+            "value_type": null,
+            "value": null,
+            "operator_value": null,
+            "operator_sibling": ",",
+            "operator_child": null,
+            "mutex": null,
+            "must_have": false,
+            "dependency_id": [
+                3
+            ],
+            "weight": null,
+            "must_child": false,
+            "child_id": null
+        },
+        "discard": {
             "id": 9,
             "value_type": null,
             "value": null,
-            "child": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                4
+                3
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "discard": {
+        "nodiscard": {
             "id": 10,
             "value_type": null,
             "value": null,
-            "child": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                4
+                3
             ],
-            "weight": null
-        },
-        "nodiscard": {
-            "id": 11,
-            "value_type": null,
-            "value": null,
-            "child": null,
-            "operator_sibling": ",",
-            "operator_child": null,
-            "mutex": null,
-            "must_have": false,
-            "dependency_id": [
-                4
-            ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         }
     },
-    "-F": {
-        "id": 12,
+    "-F ": {
+        "id": 11,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": true,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
-    "-g": {
-        "id": 13,
+    "-g ": {
+        "id": 12,
         "value_type": 1,
         "value": [
             0,
             1000000,
             8
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-G": {
-        "id": 14,
+        "id": 13,
         "value_type": 2,
         "value": [
             2,
             0,
-            1000000,
+            10,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": [
-            33
+            32
         ],
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-i": {
-        "id": 15,
+        "id": 14,
         "value_type": 1,
         "value": [
             1024,
             67108864,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-I": {
-        "id": 16,
-        "value_type": 1,
+        "id": 15,
+        "value_type": 2,
         "value": [
-            128,
-            1024,
-            2
+            2,
+            0,
+            3,
+            128
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-j": {
+        "id": 16,
+        "value_type": null,
+        "value": null,
+        "operator_value": " ",
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-J": {
         "id": 17,
         "value_type": null,
         "value": null,
-        "operator_sibling": " ",
-        "operator_child": null,
-        "mutex": null,
-        "must_have": false,
-        "dependency_id": null,
-        "weight": null
-    },
-    "-J": {
-        "id": 18,
-        "value_type": null,
-        "value": null,
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": " ",
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
         "weight": null,
+        "must_child": true,
+        "child_id": [
+            18,
+            19
+        ],
         "size=": {
-            "id": 19,
+            "id": 18,
             "value_type": 1,
             "value": [
-                1.0,
-                100.0,
+                1048576,
+                104857600,
                 1
             ],
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": [
-                30
+                19
             ],
             "must_have": false,
             "dependency_id": [
-                18
+                17
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
         "device=": {
-            "id": 20,
+            "id": 19,
             "value_type": 3,
-            "value": "",
+            "value": "journal_dev",
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": [
-                29
+                18
             ],
             "must_have": false,
             "dependency_id": [
-                18
+                17
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         }
     },
     "-K": {
-        "id": 21,
+        "id": 20,
         "value_type": null,
         "value": null,
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-l": {
-        "id": 22,
+        "id": 21,
         "value_type": 3,
-        "value": "",
+        "value": "loop_dev",
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-L": {
-        "id": 23,
+        "id": 22,
         "value_type": 1,
         "value": [
             0,
             1000000,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-m": {
-        "id": 24,
+        "id": 23,
         "value_type": 1,
         "value": [
             0,
             50,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-M": {
-        "id": 25,
+        "id": 24,
         "value_type": 3,
-        "value": "",
+        "value": "./mnt",
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-n": {
-        "id": 26,
+        "id": 25,
         "value_type": null,
         "value": null,
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-N": {
-        "id": 27,
-        "value_type": null,
+        "id": 26,
+        "value_type": 1,
         "value": [
             0,
             1000000,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-o": {
-        "id": 28,
+        "id": 27,
         "value_type": 4,
-        "value": [],
+        "value": [
+            "linux_1.0",
+            "linux_1.1",
+            "linux_1.2",
+            "linux_2.0"
+        ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-O": {
-        "id": 29,
+        "id": 28,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": " ",
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
         "weight": null,
+        "must_child": true,
+        "child_id": [
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+        ],
         "dir_index": {
+            "id": 29,
+            "value_type": null,
+            "value": null,
+            "operator_value": null,
+            "operator_sibling": ",",
+            "operator_child": null,
+            "mutex": null,
+            "must_have": false,
+            "dependency_id": [
+                28
+            ],
+            "weight": null,
+            "must_child": false,
+            "child_id": null
+        },
+        "extent": {
             "id": 30,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "extent": {
+        "filetype": {
             "id": 31,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "filetype": {
+        "flex_bg": {
             "id": 32,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "flex_bg": {
+        "has_journal": {
             "id": 33,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "has_journal": {
+        "journal_dev": {
             "id": 34,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "journal_dev": {
+        "large_file": {
             "id": 35,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "large_file": {
+        "resize_inode": {
             "id": 36,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "resize_inode": {
+        "sparse_super": {
             "id": 37,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         },
-        "sparse_super": {
+        "uninit_bg": {
             "id": 38,
             "value_type": null,
             "value": null,
+            "operator_value": null,
             "operator_sibling": ",",
             "operator_child": null,
             "mutex": null,
             "must_have": false,
             "dependency_id": [
-                29
+                28
             ],
-            "weight": null
-        },
-        "uninit_bg": {
-            "id": 39,
-            "value_type": null,
-            "value": null,
-            "operator_sibling": ",",
-            "operator_child": null,
-            "mutex": null,
-            "must_have": false,
-            "dependency_id": [
-                29
-            ],
-            "weight": null
+            "weight": null,
+            "must_child": false,
+            "child_id": null
         }
     },
     "-q": {
-        "id": 40,
+        "id": 39,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-r": {
-        "id": 41,
+        "id": 40,
         "value_type": 1,
         "value": [
             0,
             1,
             1
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-S": {
-        "id": 42,
+        "id": 41,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-t": {
-        "id": 43,
+        "id": 42,
         "value_type": 4,
         "value": [
             "ext2",
             "ext3",
             "ext4"
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": true,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-T": {
-        "id": 44,
+        "id": 43,
         "value_type": 4,
         "value": [
             "floppy",
             "small",
             "default"
         ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-U": {
-        "id": 45,
+        "id": 44,
         "value_type": 4,
-        "value": [],
+        "value": [
+            "2b8fd835-3b1b-4258-9a41-7345c6aa15e1",
+            "13f725e4-a4a4-11eb-bcbc-0242ac130002"
+        ],
+        "operator_value": " ",
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     },
     "-v": {
+        "id": 45,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-V": {
         "id": 46,
         "value_type": null,
         "value": null,
+        "operator_value": null,
         "operator_sibling": " ",
         "operator_child": null,
         "mutex": null,
         "must_have": false,
         "dependency_id": null,
-        "weight": null
-    },
-    "-V": {
-        "id": 47,
-        "value_type": null,
-        "value": null,
-        "operator_sibling": " ",
-        "operator_child": null,
-        "mutex": null,
-        "must_have": false,
-        "dependency_id": null,
-        "weight": null
+        "weight": null,
+        "must_child": false,
+        "child_id": null
     }
 }

@@ -7,12 +7,13 @@ JSON_C_DIR=/usr/local
 CFLAGS += -I$(JSON_C_DIR)/include/json-c
 LDFLAGS+= -L$(JSON_C_DIR)/lib 
 LIBJSONC = -ljson-c
+LIBMATH = -lm
 
 all: translator
 
 translator:
 # 	$(CC) $(CFLAGS) translator.c -o translator
-	$(CC) $(CFLAGS) $(LDFLAGS) translator.c -o translator $(LIBJSONC)
+	$(CC) $(CFLAGS) $(LDFLAGS) translator.c -o translator $(LIBJSONC) $(LIBMATH)
 
 clean:
 	rm -f *.o *.so *.a
