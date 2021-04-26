@@ -1,0 +1,68 @@
+mke2fs -b 2048 -E stride=924869,resize=904555,lazy_itable_init=1,test_fs -F  -g  696008 -G 16 -K  -L 894348 -n  -N 75259 -O dir_index,extent,flex_bg,has_journal,journal_dev,large_file,uninit_bg -q -r 1 -t ext4 -U 2b8fd835-3b1b-4258-9a41-7345c6aa15e1 -v 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+Creating regular file mke2fs
+
+Warning: RAID stripe-width 913474 not an even multiple of stride 34090.
+
+mke2fs: blocks per group count out of range
+1
+mke2fs -b 4096 -c -E resize=899023,discard,nodiscard -F  -i 20842836 -I 128 -j  -J size=1685025 -K  -l loop_dev -L 326146 -M ./mnt -O filetype,journal_dev,resize_inode -r 1 -t ext2 -T small -v 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+	Using EXT2FS Library version 1.46.2
+0
+mke2fs -b 2048 -E stride=4269,stripe-width=431832,lazy_itable_init=0,discard -F  -g  347328 -G 512 -J size=46382754 -l loop_dev -m 27 -M ./mnt -O dir_index,extent,flex_bg,journal_dev,resize_inode -q -t ext2 -T floppy -U 2b8fd835-3b1b-4258-9a41-7345c6aa15e1 -v -V 100M
+
+mke2fs 1.46.2 (28-Feb-2021)
+	Using EXT2FS Library version 1.46.2
+0
+mke2fs -b 2048 -cc -E resize=646489,lazy_itable_init=0,test_fs,discard,nodiscard -F  -i 35575174 -I 128 -J device=journal_dev -L 586832 -m 39 -M ./mnt -o linux_1.2 -O dir_index,filetype,flex_bg,has_journal,journal_dev,resize_inode,uninit_bg -r 0 -S -t ext4 -T floppy -U 2b8fd835-3b1b-4258-9a41-7345c6aa15e1 -V 100M
+
+fs_types for mke2fs.conf resolution: 'ext2', 'small'
+mke2fs: blocks per group count out of range
+1
+mke2fs -b 4096 -c -E stripe-width=521816,resize=843323,lazy_itable_init=0,nodiscard -F  -i 57484430 -j  -J size=53791065 -L 331255 -M ./mnt -n  -o linux_1.1 -O dir_index,extent,filetype,flex_bg,resize_inode,sparse_super,uninit_bg -q -t ext3 -T small -v -V 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+	Using EXT2FS Library version 1.46.2
+0
+mke2fs -b 4096 -cc -E stride=772180,stripe-width=759241,resize=34620,lazy_itable_init=0,test_fs,nodiscard -F  -g  359456 -i 66659597 -I 1024 -j  -J device=journal_dev -K  -l loop_dev -m 24 -M ./mnt -N 965859 -o linux_1.1 -O dir_index,extent,filetype,journal_dev,large_file,resize_inode -q -t ext4 -U 2b8fd835-3b1b-4258-9a41-7345c6aa15e1 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+fs_types for mke2fs.conf resolution: 'ext3', 'small'
+
+The total requested journal size is 673662464 blocks; it must be
+between 1024 and 10240000 blocks.  Aborting.
+1
+mke2fs -b 2048 -c -E lazy_itable_init=0,test_fs,discard -F  -g  219792 -I 512 -j  -J device=journal_dev -K  -l loop_dev -L 301656 -M ./mnt -n  -N 684077 -o linux_1.1 -O dir_index,filetype,has_journal,journal_dev,sparse_super -q -r 0 -t ext4 -T small 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+	Using EXT2FS Library version 1.46.2
+0
+mke2fs -b 4096 -cc -E resize=61602,lazy_itable_init=1,test_fs,nodiscard -F  -G 32 -i 66920037 -l loop_dev -N 485362 -o linux_1.1 -O extent,filetype,flex_bg,uninit_bg -r 0 -t ext2 -T small -v 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+Filesystem features not supported with revision 0 filesystems
+1
+mke2fs -b 1024 -cc -E stride=265081,stripe-width=105794,resize=86858,lazy_itable_init=0,test_fs,discard,nodiscard -F  -g  141280 -G 128 -I 256 -j  -J size=35830880 -L 376931 -M ./mnt -O filetype,flex_bg,has_journal,journal_dev,large_file,resize_inode,sparse_super -r 1 -S -t ext3 -T default 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+	Using EXT2FS Library version 1.46.2
+0
+mke2fs -b 1024 -E stripe-width=957796,resize=657852,nodiscard -F  -G 64 -I 1024 -J device=journal_dev -K  -L 824443 -o linux_1.0 -O extent,filetype,flex_bg,has_journal,journal_dev,resize_inode,sparse_super -t ext3 -v 100M
+
+Warning: -K option is deprecated and should not be used anymore. Use '-E nodiscard' extended option instead!
+mke2fs 1.46.2 (28-Feb-2021)
+
+Warning: RAID stripe-width 636665 not an even multiple of stride 5441.
+
+mke2fs: blocks per group count out of range
+1
+0/10 succeeded.
+
