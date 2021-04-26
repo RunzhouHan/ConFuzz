@@ -13,8 +13,8 @@ all: translator
 
 translator:
 # 	$(CC) $(CFLAGS) translator.c -o translator
-	$(CC) $(CFLAGS) $(LDFLAGS) translator.c -o translator $(LIBJSONC) $(LIBMATH)
+	$(CC) $(CFLAGS) $(LDFLAGS) arg_fuzz.c -o arg_fuzz $(LIBJSONC) $(LIBMATH)
 
 clean:
 	rm -f *.o *.so *.a
-	rm -f translator
+	rm -f arg_fuzz
