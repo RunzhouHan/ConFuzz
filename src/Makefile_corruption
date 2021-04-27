@@ -1,0 +1,18 @@
+E2FSPROGS=e2fsprogs
+CXXFLAGS=-std=c++11
+CXX = /home/runzhou/pfuzz/afl/afl-g++
+
+all: test
+
+parser:
+	$(CXX) $(CXXFLAGS) -I$(E2FSPROGS)/lib/ -c ext4_parser.cc -g
+# 	$(CXX) $(CXXFLAGS) -o ext4_parser ext4_parser.o -lext2fs -lcom_err -lpthread
+
+test:
+	$(CXX) $(CXXFLAGS) -I$(E2FSPROGS)/e2fsck/ -c test.cc -g
+# 	$(CXX) $(CXXFLAGS) -o test test.o ext4_parser.o -lext2fs -lcom_err -lpthread
+# 	$(CXX) $(CXXFLAGS) -o test test.o $(E2FSPROGS)/lib/libext2fs.a 
+	$(CXX) $(CXXFLAGS) -o test test.o -lext2fs -lcom_err -lpthread
+clean:
+	rm -f *.o *.so *.a
+	rm -f test

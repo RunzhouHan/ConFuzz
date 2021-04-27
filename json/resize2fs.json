@@ -1,0 +1,153 @@
+{
+    "-b": {
+        "id": 0,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": [
+            7
+        ],
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-d": {
+        "id": 1,
+        "value_type": 2,
+        "value": [
+            2,
+            1,
+            5,
+            1
+        ],
+        "operator_value": " ",
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-f": {
+        "id": 2,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-F": {
+        "id": 3,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-M": {
+        "id": 4,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-p": {
+        "id": 5,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-P": {
+        "id": 6,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": [
+            4
+        ],
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-s": {
+        "id": 7,
+        "value_type": null,
+        "value": null,
+        "operator_value": null,
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": [
+            0
+        ],
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-S": {
+        "id": 8,
+        "value_type": 3,
+        "value": "RAID-stride",
+        "operator_value": " ",
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    },
+    "-z": {
+        "id": 9,
+        "value_type": 3,
+        "value": "undo_file",
+        "operator_value": " ",
+        "operator_sibling": " ",
+        "operator_child": null,
+        "mutex": null,
+        "must_have": false,
+        "dependency_id": null,
+        "weight": null,
+        "must_child": false,
+        "child_id": null
+    }
+}
